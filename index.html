@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Music</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(40, 40, 40); 
+            color: white;
+            
+        }
+
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2em;
+
+        }
+        article {
+            overflow: auto;
+            font-size: small;
+            width: 300px;
+            float: left;
+            margin-right: 20px;
+            box-sizing: border-box; 
+        }
+
+        @keyframes moveLeft {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-105%);
+            }
+        }
+
+        .animate-moveLeft {
+            animation: moveLeft 25s linear infinite;
+        }
+
+       
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            color: black;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .close-btn {
+            cursor: pointer;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body class="">
+    <header>        
+        <h1 class="hover:text-blue-300 cursor-default">Welcome</h1>
+    </header>
+    <div class="flex flex-col items-center justify-center mt-20 text-8xl font-thin max-w-7xl mb-20 mx-auto">
+        <img src="assets/apple-logo.svg" alt="Logo" class="ml-5 flex white justify-center w-12 h-16" />
+        <p>Your Favorite Music</p>
+        <p class=" text-md font-thin">
+            In
+            <span class="bg-gradient-to-r from-red-600 to-purple-600 text-transparent bg-clip-text">
+                One
+            </span>
+            Place
+        </p>
+        <button id="openModal" class="bg-black text-white font-normal text-sm mt-5 rounded-full p-2 hover:text-blue-300 hover:bg-slate-500">Login</button>
+        
+
+        <div class="bg-white/5 mt-5 rounded-lg p-3 text-center overflow-hidden">
+            <div class="grid grid-cols-8 gap-4 animate-moveLeft">
+                <div class="w-full h-24 rounded-lg overflow-hidden group hover:border-blue-300 hover:border-4">
+                    <img
+                        src="assets/frank.jpg"
+                        alt="frank"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div class="w-full h-24 rounded-lg overflow-hidden group hover:border-blue-300 hover:border-4 ">
+                    <img
+                        src="assets/James.webp"
+                        alt="Blonde"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div class="w-full h-24 rounded-lg overflow-hidden group  hover:border-blue-300 hover:border-4">
+                    <img
+                        src="assets/veeze.jpg"
+                        alt="Nightcap"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div class="w-full h-24 rounded-lg overflow-hidden group hover:border-blue-300 hover:border-4">
+                    <img
+                        src="assets/alicia.avif"
+                        alt="Irishmen"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <div class="w-full h-24 rounded-lg overflow-hidden group  hover:border-blue-300 hover:border-4">
+                    <img src="assets/yves.jpg" alt="Ted Lasso" title="source: imgur.com" />
+                </div>
+                <div class="w-full h-24 rounded-lg overflow-hidden group  hover:border-blue-300 hover:border-4">
+                    <img
+                        src="assets/danglo.jpg"
+                        alt="Blonde"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                
+            </div>
+            <div class="flex-row justify-center ml-40 p-10 items-center ">
+                <article class="rounded-md hover:bg-black transition duration-300 border-2 mt-20 ">
+                    <h2 class=" p-5 font-bold mb-2 mr-10">Technologies</h2>
+                    <img src="assets/alicia.avif" class="rounded-full mb-2 flex justify-center  ml-20 p-4 border-4 transition duration-300 hover:border-blue-300" alt="Description of Image 1" width="100">
+                    <p>Seamless Integration with Dolby Atmos Listening, tailored to interact with any apple or third party product.</p><br>
+                    <p>Best in class predictive models to find and recommend songs and audio books we know<br> you'll love. The more you listen, the better it gets, sign up today for our Apple Integrated Siri + LLM<br>Which will help customize your Apple Music experience</p><br>
+                    <p class="mb-2">Sign Up today to learn more about the all new Immersive listener content through the Apple vision pro. A new era of Spatial Computing</p>
+                </article>
+
+                <article class="rounded-md  hover:bg-black transition duration-300 border-2 mt-20 ">
+                    <h2 class=" p-5 font-bold mb-2 mr-10">Catalog</h2>
+                    <img src="assets/James.webp" class="rounded-full mb-2 flex justify-center   ml-20 p-4 border-4 transition duration-300 hover:border-blue-300" alt="Description of Image 1" width="100">
+                    <p>Weather you're seeking audio books, music playlists or podcasts, we offer full service audio experiences with best in class sound quality. Take a look today to determine all the ways you can use the Apple platform </p><br>
+                    <p class="mb-2">We offer over 2200 Genres of music, with 78,000 different artists. Explore various styles and types of content that are completely unique to the Apple platform.</p>
+                    <p class="mb-2">Sign Up today to learn more about the all new Immersive listener content through the Apple vision pro. A new era of Spatial Computing</p>
+
+                </article>
+                <article class="rounded-md hover:bg-black transition duration-300 border-2 mt-20 ">
+                    <h2 class=" p-5 font-bold mb-2 mr-10">Content</h2>
+                    <img src="assets/frank.jpg" class="rounded-full mb-2 flex justify-center  ml-20 p-4 border-4 transition duration-300 hover:border-blue-300" alt="Description of Image 1" width="100">
+                    <p>5k, 8k & 10k content now open for streaming. The only platform that includes this quality free of additional charges. Download from the Vision Pro and get Apple Music included.</p><br>
+                    <p>Explore our various content types, and even contribute to the creator economoy by uploading your own. Consult an Apple artist guide today to learn more. Weather you're seeking out our platform as a listener or creator we want to help!</p><br>
+                    <p class="mb-2">Sign Up today to learn more about the all new Immersive listener content through the Apple vision pro. A new era of Spatial Computing</p>
+                </article>
+                <article class="rounded-md hover:bg-black transition duration-300 border-2 mt-20 ">
+                    <h2 class=" p-5 font-bold mr-10 mb-2">Creativity</h2>
+                    <img src="assets/microphone.svg" class="rounded-full hover:bg-blue-500 mb-2 flex justify-center  ml-20 p-4 border-4 transition duration-300 hover:border-blue-300" alt="Description of Image 1" width="100">
+                    <p>As an artist you should have a platform as creative as you. Don't wait on the technology to catch up, check out out Apple Music for Artists app and unlock new ways to communicate with fans.</p><br>
+                    <p>Weather you're looking to produce visuals, track performance of your songs, or sell merchandise to your listeners. Apple Music offers various ways to communicate and capitalize on your artwork. Join today to learn more.</p><br>
+                    <p class="mb-2">Sign Up today to learn more about the all new Immersive listener content through the Apple vision pro. A new era of Spatial Computing</p>
+                </article>
+                <article class="rounded-md hover:bg-black transition duration-300 border-2 mt-20 ">
+                    <h2 class=" p-5 font-bold mb-2 mr-10">Artist Services</h2>
+                    <img src="assets/apple-logo.svg" class="rounded-full mb-2 hover:bg-blue-500 flex justify-center  ml-20 p-4 border-4 transition duration-300 hover:border-blue-300" alt="Description of Image 1" width="100">
+                    <p>We offer 24/7 end to end services for out artists. You make our platform unique, we want to help you continue to do so. We provide best in class resources to extend your outreach possibilities.</p><br>
+                    <p>Looking for something you don't see? Send a query to our support staff anytime of the day. Ask our customized GPT trained on all of your open account data.</p><br>
+                    <p class="mb-2">Sign Up today to learn more about the all new Immersive listener content through the Apple vision pro. A new era of Spatial Computing</p>
+                </article>
+                <article class="rounded-md hover:bg-black transition duration-300 border-2 mt-20 ">
+                    <h2 class=" p-5 font-bold mb-2 mr-10">Coming Soon</h2>
+                    <img src="assets/hand.svg" class="rounded-full mb-2 flex justify-center hover:bg-blue-500 ml-20 p-4 border-4 transition duration-300 hover:border-blue-300" alt="Description of Image 1" width="100">
+                    <p>We have customized content creation suites, advanced LLMs, and More coming sprinf of 25. We are seeking artists to demo our newest features. Join the waitlist today!</p><br>
+                    <p>Have an idea? Book a demo with our product team and discuss piloting your idea. If your idea becomes an app or service, we will pay you a finders fee, or split based on revenue. </p><br>
+                    <p class="mb-2">Sign Up today to learn more about the all new Immersive listener content through the Apple vision pro. A new era of Spatial Computing</p>
+                </article>
+                
+                
+            </div>
+
+        </div>
+        <h1 class="flex justify-center text-md mt-20">Appointment Form</h1>
+
+        <form class="text-2xl flex justify-center rounded-md w-80 p-2" style="width: 300px;">
+            <label class="mt-10" for="text_field">Name:</label><br>
+            <input class="w-40 mt-10 h-10 text-black rounded-md" type="text" id="text_field" name="text_field"><br><br>
+        
+            <label class="mt-10 ml-10" for="datalist_options">Time:</label><br>
+            <input list="options" class="mt-10 h-10 rounded-md text-black" id="datalist_options" name="datalist_options">
+            <datalist id="options">
+              <option value="1PM">
+              <option value="2PM">
+              <option value="3PM">
+              <option value="4PM">
+            </datalist><br><br>
+
+            <input class="w-40 mt-10 h-10 text-black rounded-md" type="date" id="date_field" name="date_field"><br><br>
+
+
+            <input class="ml-10 rounded-md h-9 p-2 text-sm hover:bg-blue-500 transition duration-300 mt-10" type="submit" onclick="alert('Thank you!')" value="Submit">
+            <input class="ml-10 rounded-md h-9 p-2 hover:bg-blue-500 transition duration-300 text-sm mt-10" type="reset" value="Clear">
+        </form>
+
+        <form class="flex justify-left ml-20 mt-10 text-sm text-black" action="#">
+            <label class="text-white rounded-md"  for="datepicker">Select a date: </label>
+            <input type="date" id="datepicker" name="datepicker">
+            <input class="hover:bg-blue-500" onclick="alert('Thank you!')" type="submit" value="Submit">
+        </form>
+
+        <div id="myModal" class="fixed text-black inset-0 z-10 flex items-center justify-center hidden">
+            <div class="absolute inset-0 bg-black text-xl opacity-50"></div>
+            <div class="bg-white p-6 text-xl  rounded-lg z-20">
+                <span id="closeModal" class="absolute top-0 right-0 mt-4 mr-4 text-lg cursor-pointer">&times;</span>
+                <p class="text-xl font-bold mb-4">Try Apple One Free*</p>
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="text-lg block">Name:</label>
+                        <input type="text" id="name" name="name" class="border border-gray-300 p-2 w-full rounded" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="text-lg block">Email:</label>
+                        <input type="email" id="email" name="email" class="border border-gray-300 p-2 w-full rounded" />
+                    </div>
+                    <button type="submit" class="bg-blue-500 text-white font-normal text-sm mt-2 rounded-full p-2 hover:bg-blue-600">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        document.getElementById('openModal').addEventListener('click', function () {
+            document.getElementById('myModal').classList.remove('hidden');
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function () {
+            document.getElementById('myModal').classList.add('hidden');
+        });
+    </script>
+</body>
+
+</html>
